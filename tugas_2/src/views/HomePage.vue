@@ -23,7 +23,7 @@
             <h2>{{ item.formattedTime }}</h2>
             <p>{{ item.formattedDate }}</p>
           </ion_label>
-          <ion_badge slot="end" :color="tempcolor(item.temp)">
+          <ion_badge slot="end" :color="tempColor(item.temp)">
             {{ item.temp.toFixed(1) }} °C
           </ion_badge>
         </ion-item>
@@ -53,7 +53,7 @@ const weatherList = ref<any[]>([])
 const loading = ref(false)
 const error = ref<string | null>(null)
 
-const tempcolor = (t: number) => t >= 32 ? "danger" : t >= 28 ? "warning" : "success"
+const tempColor = (t: number) => t >= 32 ? "danger" : t >= 28 ? "warning" : "success"
 
 async function fetchWeather() {
   loading.value = true
